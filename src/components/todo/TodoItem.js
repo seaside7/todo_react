@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 export const TodoItem = (props) => {
+    const handleToogle = props.handleToogle.bind(null, props.id)
     return (
         <li key={props.id}>
-            <input type="checkbox" defaultChecked={props.isComplete} /> {props.name}
+            <input type="checkbox" onChange={handleToogle} checked={props.isComplete} /> {props.name}
         </li>
     )
 }
